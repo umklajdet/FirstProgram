@@ -13,13 +13,14 @@ public class Tasks {
         Задайте массив из 5 любых целых чисел.
         Поменяйте местами первый и последний элемент в массиве.
         Вывести в консоль результат суммы первого и среднего элемента.
+        Примечание : Для получения последнего и среднего элементов в массиве используйте свойство length.
         */
         int[] arrayTask3 = new int[5];
         arrayTask3 = new int[]{10, 78, 65, 33, 784};
         int change = arrayTask3[0];
-        arrayTask3[0] = arrayTask3[4];
-        arrayTask3[4] = change;
-        int sum = arrayTask3[0] + arrayTask3[2];
+        arrayTask3[0] = arrayTask3[arrayTask3.length-1];
+        arrayTask3[arrayTask3.length-1] = change;
+        int sum = arrayTask3[0] + arrayTask3[arrayTask3.length/2];
         System.out.println("Сумма первого и среднего элемента массива = " + sum);
     }
 }
