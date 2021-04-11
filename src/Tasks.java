@@ -1,5 +1,7 @@
 import com.sun.javafx.runtime.SystemProperties;
 
+import java.util.Scanner;
+
 public class Tasks {
     public static void main(String[] args) {
         //задача 2
@@ -22,5 +24,23 @@ public class Tasks {
         arrayTask3[arrayTask3.length-1] = change;
         int sum = arrayTask3[0] + arrayTask3[arrayTask3.length/2];
         System.out.println("Сумма первого и среднего элемента массива = " + sum);
+
+        /* задача 4
+        Ввести три числа с клавиатуры x, y, z
+        Найти и вывести в консоль среднее арифметическое этих чисел.
+        Разделить среднее арифметическое на 2 и округлить в меньшую сторону
+        Если полученное число больше 3, то вывести на экран сообщение "Программа выполнена корректно"
+        */
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите 3 числа: ");
+        double x = sc.nextDouble();
+        double y = sc.nextDouble();
+        double z = sc.nextDouble();
+        double avg = (x+y+z)/3;
+        System.out.println("Среднее арифметическое = " + avg);
+        double avg2 = Math.floor(avg/2);
+        if (avg2 > 3)
+            System.out.println("Программа работает корректно");
+
     }
 }
