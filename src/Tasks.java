@@ -42,5 +42,31 @@ public class Tasks {
         if (avg2 > 3)
             System.out.println("Программа работает корректно");
 
+        /* задача 5
+        Ввести 2 числа с клавиатуры, затем один из символов ‘+’, ‘-’, ‘*’ или ‘/’.
+        В зависимости от символа вывести в консоль результат выполнения соответствующей арифметической операции.
+        */
+        System.out.print("Введите 2 числа и символ арифметической операции: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        String str;
+        double result = 0;
+        str = sc.nextLine().trim();
+        //System.out.println(a + " " + b + " " + str);
+        switch (str) {
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+        }
+        System.out.println("результат = " + result);
     }
 }
