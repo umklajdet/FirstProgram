@@ -21,24 +21,31 @@ import java.util.Scanner;
 
 public class Converter {
     public static void main(String[] args) {
-        System.out.println("Выберите что переводить: 1 - масса, 2 - расстояние");
+        System.out.println("Выберите, что переводить: 1 - масса, 2 - расстояние");
         Scanner sc = new Scanner(System.in);
-        int value = sc.nextInt();
-        if (value == 1)
-            System.out.println("Выберите единицу измерения: 1 - грамм, 2 - фунт, 3 - унция, 4 - стоун");
-        else if (value == 2)
-            System.out.println("Выберите единицу измерения: 1 - метр, 2 - миля, 3 - ярд, 4 - фут");
-        else {
-            System.out.println("Введено неверное значение");
-            return;
+
+        int value = 0;
+        // проверка выбора что переводить. Если введено неверно, предлагается ввести еще раз
+        while (!(value == 1 | value == 2)) {
+            value = sc.nextInt();
+            if (value == 1)
+                System.out.println("Выберите единицу измерения: 1 - грамм, 2 - фунт, 3 - унция, 4 - стоун");
+            else if (value == 2)
+                System.out.println("Выберите единицу измерения: 1 - метр, 2 - миля, 3 - ярд, 4 - фут");
+            else
+                System.out.println("Введено неверное значение. Введите 1 или 2");
         }
-        int measure = sc.nextInt();
-        if (measure != 1 & measure != 2 & measure != 3 & measure != 4){
-            System.out.println("Введено неверное значение");
-            return;
+
+        int measure = 0;
+        // проверка выбранной единицы измерения. Если введено неверно, предлагается ввести еще раз
+        while (!(measure == 1 | measure == 2 | measure == 3 | measure == 4)) {
+            measure = sc.nextInt();
+            if (measure != 1 & measure != 2 & measure != 3 & measure != 4)
+                System.out.println("Введено неверное значение. Введите одно из значений: 1, 2, 3 или 4");
         }
+
         System.out.print("Введите число: ");
-        int num = sc.nextInt();
+        double num = sc.nextDouble();
 
         // множители для конвертации расстояния
         double m2ml = 1609;
@@ -93,11 +100,10 @@ public class Converter {
                     yrdRes = num / yrd2ft;
                     break;
             }
-            //System.out.println("Результат:\n" + "Метры: " + mRes + "\nМили: " + mlRes + "\nЯрды: " + yrdRes + "\nФуты: " + ftRes);
             System.out.printf("Результат:%n" + "Метры: %f%n" + "Мили: %f%n" + "Ярды: %f%n" + "Футы: %f%n", mRes, mlRes, yrdRes, ftRes);
         }
 
-        // здесь будет вычисление результирующих значений массы
+        // вычисление результирующих значений массы
         if (value == 1){
             switch (measure){
                 case 1:
