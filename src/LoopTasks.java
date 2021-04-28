@@ -8,20 +8,38 @@ import java.util.Scanner;
 */
 public class LoopTasks {
     public static void main(String[] args) {
+        /*
+        задача 7
+        Напишите программу:
+        Пользователь вводит размер массива и данные с клавиатуры в массив
+        Сравнить элементы массива с заранее заданными константами x, y, z.
+        Если массив содержит хотя бы одну из констант, вывести текст "Данное значение имеется в константах".
+        */
         int x = 10, y = 15, z = 100;
         System.out.println("Введите размер массива");
-        Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
+        Scanner sc7 = new Scanner(System.in);
+        int size = sc7.nextInt();
         int[] arrTask7 = new int[size];
         System.out.println("Введите числа для заполнения массива");
         // ввод чисел в массив
         for (int i = 0; i < size; i++){
-            arrTask7[i] = sc.nextInt();
+            arrTask7[i] = sc7.nextInt();
         }
         // сравнение содержимого массива с константами
         for (int n : arrTask7) {
             if(n == x | n == y | n == z)
                 System.out.printf("Данное значение (%d) имеется в константах %n", n);
         }
+
+        //задача 8
+        //Напишите программу, где пользователь вводит любое целое положительное число n. А программа суммирует все нечетные числа от 1 до введенного пользователем числа n.
+        System.out.println("Введите положительное число");
+        Scanner sc8 = new Scanner(System.in);
+        int num = sc8.nextInt();
+        int sum = 0;
+        for(int i = 1; i <= num; i += 2){
+            sum += i;
+        }
+        System.out.println("Сумма нечетных чисел = " + sum);
     }
 }
