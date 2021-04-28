@@ -17,8 +17,8 @@ public class Tasks {
         Вывести в консоль результат суммы первого и среднего элемента.
         Примечание : Для получения последнего и среднего элементов в массиве используйте свойство length.
         */
-        int[] arrayTask3 = new int[5];
-        arrayTask3 = new int[]{10, 78, 65, 33, 784};
+        //int[] arrayTask3 = new int[5];
+        int[] arrayTask3 = new int[]{10, 78, 65, 33, 784};
         int change = arrayTask3[0];
         arrayTask3[0] = arrayTask3[arrayTask3.length-1];
         arrayTask3[arrayTask3.length-1] = change;
