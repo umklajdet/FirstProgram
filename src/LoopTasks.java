@@ -41,5 +41,32 @@ public class LoopTasks {
             sum += i;
         }
         System.out.println("Сумма нечетных чисел = " + sum);
+
+        /*
+        задача 9
+        Напишите программу:
+        Пользователь вводит размер массива и данные с клавиатуры в массив типа double.
+        Посчитайте среднее арифметическое элементов массива.
+        После этого произведите вывод массива на экран, где каждый элемент массива умножается на среднее арифметическое
+        */
+        System.out.println("Введите размер массива");
+        Scanner sc9 = new Scanner(System.in);
+        int arrSize = sc9.nextInt();
+        double[] arrTask9 = new double[arrSize];
+        // ввод чисел в массив
+        for (int j = 0; j < arrTask9.length; j++){
+            arrTask9[j] = sc7.nextDouble();
+        }
+        // подсчет ср. арифм.
+        double avg = 0;
+        for (double v : arrTask9) {
+            avg += v;
+        }
+        avg = avg / arrTask9.length;
+        //System.out.println(avg);
+        // вывод произведения элементов массива и ср.арифм.
+        for (double w : arrTask9){
+            System.out.printf("Произведение элемента массива и среднего арифметического = %f%n", w*avg);
+        }
     }
 }
