@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LoopTasks {
@@ -50,6 +51,7 @@ public class LoopTasks {
         Scanner sc9 = new Scanner(System.in);
         int arrSize = sc9.nextInt();
         double[] arrTask9 = new double[arrSize];
+        System.out.println("Введите числа для заполнения массива");
         // ввод чисел в массив
         for (int j = 0; j < arrTask9.length; j++){
             arrTask9[j] = sc7.nextDouble();
@@ -64,6 +66,28 @@ public class LoopTasks {
         // вывод произведения элементов массива и ср.арифм.
         for (double w : arrTask9){
             System.out.printf("Произведение элемента массива и среднего арифметического = %f%n", w*avg);
+        }
+
+        // задача 10
+        // Напишите программу, где пользователь вводит данные с клавиатуры в матрицу, а после этого произведите вывод первой строки матрицы на экран, где каждый элемент умножается на 3.
+        // Размерность матрицы задается пользователем.
+        System.out.println("Задача 10");
+        System.out.println("Введите количество строк и столбцов для создания массива");
+        Scanner sc10 = new Scanner(System.in);
+        // получаем размерность матрицы
+        int str = sc10.nextInt();
+        int col = sc10.nextInt();
+        int[][] arrTask10 = new int[str][col];
+        System.out.println("Введите числа для заполнения матрицы");
+        // ввод чисел в матрицу
+        for (int i = 0; i < str; i++){
+            for (int j = 0; j < col; j++){
+                arrTask10[i][j] = sc10.nextInt();
+            }
+        }
+        //вывод первой строки матрицы с умножением на 3
+        for (int j = 0; j < col; j++){
+            System.out.printf("Элемент первой строки * 3 = %d%n", arrTask10[0][j]*3);
         }
     }
 }
