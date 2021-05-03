@@ -54,10 +54,10 @@ public class DataTasks {
         Scanner sc13 = new Scanner(System.in);
         String str13 = sc13.nextLine();
         String[] str13Arr = str13.split(" ");
-        String[] latLetters = new String[]{"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"};
-        System.out.println("реализация1 (с массивом символов)");
         int latWordsNum = 0;
         //реализация1
+        System.out.println("реализация1 (с массивом символов)");
+        String[] latLetters = new String[]{"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"};
         for(String word : str13Arr){
             for (String letter : latLetters){
                 if(word.contains(letter) | word.toLowerCase().contains(letter)){
