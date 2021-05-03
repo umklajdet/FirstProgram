@@ -43,5 +43,42 @@ public class DataTasks {
             System.out.println(str12.toUpperCase());
         String rep = str12.replace("a", "o");
         System.out.println(rep.substring(7, 11));
+
+        /* задача 13
+        Напишите программу, где пользователь должен ввести строку из слов, разделенных пробелами. Например: “I love java 8 Я люблю java 14 core1”. Выполните следующие действия:
+        Выведите слова, состоящие только из латиницы.
+        Выведите количество этих слов.
+         */
+        System.out.println("Задача 13");
+        System.out.println("Введите строку");
+        Scanner sc13 = new Scanner(System.in);
+        String str13 = sc13.nextLine();
+        String[] str13Arr = str13.split(" ");
+        String[] latLetters = new String[]{"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"};
+        System.out.println("реализация1 (с массивом символов)");
+        int latWordsNum = 0;
+        //реализация1
+        for(String word : str13Arr){
+            for (String letter : latLetters){
+                if(word.contains(letter) | word.toLowerCase().contains(letter)){
+                    latWordsNum++;
+                    System.out.println(word);
+                    break;
+                }
+            }
+        }
+        System.out.println("Всего слов на латинице: "  + latWordsNum);
+        //реализация2
+        System.out.println("реализация2 (с регулярными выражениями)");
+        latWordsNum = 0;
+        for(String word : str13Arr){
+            if(word.matches("^[0-9]+$"))
+                continue;
+            if(word.matches("^[a-zA-Z0-9]+$")){
+                latWordsNum++;
+                System.out.println(word);
+            }
+        }
+        System.out.printf("Всего слов на латинице: %d",  latWordsNum);
     }
 }
