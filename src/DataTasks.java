@@ -56,10 +56,25 @@ public class DataTasks {
         String str13 = sc13.nextLine();
         String[] str13Arr = str13.split(" ");
         int latWordsNum = 0;
-        //реализация1
-        System.out.println("реализация1 (с массивом символов)");
+        //реализация1 (топорная))
+        System.out.println("реализация1 топорная)");
         String[] latLetters = new String[]{"q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"};
+        boolean containsNotLetter = false;
+        //проходим по каждому слову в строке
         for(String word : str13Arr){
+            //проверяем, содержит ли слово хотябы одну не-букву. если содержит, присваиваем переменной true и выход из цикла
+            for(int k = 0; k < word.length(); k++){
+                if(!Character.isLetter(word.charAt(k))){
+                    containsNotLetter = true;
+                    break;
+                }
+                else
+                    containsNotLetter = false;
+            }
+            //если true - пропускаем проверку на соответствие симовалам латинского алфавита
+            if (containsNotLetter)
+                continue;
+            //проверяем слово на соответствие симовалам латинского алфавита. если да - выводим слово и увеличиваем количество на 1
             for (String letter : latLetters){
                 if(word.contains(letter) | word.toLowerCase().contains(letter)){
                     latWordsNum++;
@@ -73,8 +88,6 @@ public class DataTasks {
         System.out.println("реализация2 (с регулярными выражениями)");
         latWordsNum = 0;
         for(String word : str13Arr){
-            /*if(word.matches("^[0-9]+$"))
-                continue;*/
             if(word.matches("^[a-zA-Z]+$")){
                 latWordsNum++;
                 System.out.println(word);
