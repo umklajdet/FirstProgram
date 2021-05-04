@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DataTasks {
@@ -72,13 +73,33 @@ public class DataTasks {
         System.out.println("реализация2 (с регулярными выражениями)");
         latWordsNum = 0;
         for(String word : str13Arr){
-            if(word.matches("^[0-9]+$"))
-                continue;
-            if(word.matches("^[a-zA-Z0-9]+$")){
+            /*if(word.matches("^[0-9]+$"))
+                continue;*/
+            if(word.matches("^[a-zA-Z]+$")){
                 latWordsNum++;
                 System.out.println(word);
             }
         }
-        System.out.printf("Всего слов на латинице: %d",  latWordsNum);
+        System.out.printf("Всего слов на латинице: %d%n",  latWordsNum);
+
+        /* задача 14
+        Напишите программу, заполняющую массив из 15 элементов рандомными значениями в диапазоне от -20 до 20. Далее:
+        Выведите максимальный и минимальный элемент массива.
+        Из максимального и минимального значения выведите наибольшее по модулю.
+         */
+        System.out.println("Задача 14");
+        double[] randArr = new double[15];
+        double max = -20;
+        double min = 20;
+        for (int i = 0; i < randArr.length; i++){
+            randArr[i] = Math.random()*40-20;
+            max = Math.max(randArr[i], max);
+            min = Math.min(randArr[i], min);
+        }
+        /*for(double p : randArr)
+            System.out.println(p);*/
+        System.out.println("Максимум = " + max);
+        System.out.println("Минимум = " + min);
+        System.out.printf("Наибольшее по модулю = %f%n", Math.max(Math.abs(max), Math.abs(min)));
     }
 }
