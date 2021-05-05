@@ -66,8 +66,6 @@ public class EquationSolver {
             System.out.printf("Решение: x = %d%n", x);
             System.out.println("Ввести новое уравнение? Введите 1 для ввода нового уравнения, 0 для завершения работы программы");
             newEq = sc02.nextInt();
-            if(newEq == 0)
-                break;
         }
         System.out.println("Спасибо за использование нашей программы!");
     }
