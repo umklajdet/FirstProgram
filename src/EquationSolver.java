@@ -15,12 +15,12 @@ import java.util.Scanner;
 public class EquationSolver {
     public static void main(String[] args) {
         int newEq = 1;
+        int digit1 = 0, digit2 = 0, x = 0, index;
+        Scanner sc02 = new Scanner(System.in);
         while (newEq == 1) {
             System.out.println("Введите уравнение");
-            Scanner sc02 = new Scanner(System.in);
             String equation = sc02.nextLine();
-            int digit1 = 0, digit2 = 0, x = 0;
-            int index = equation.indexOf('x');
+            index = equation.indexOf('x');
             switch (index) {
                 case 0:
                     digit1 = Character.getNumericValue(equation.charAt(2));
