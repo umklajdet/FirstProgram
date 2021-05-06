@@ -16,11 +16,18 @@ public class EquationSolver {
     public static void main(String[] args) {
         int newEq = 1;
         int digit1 = 0, digit2 = 0, x = 0, index;
+        String equation;
         Scanner sc02 = new Scanner(System.in);
+        Scanner sc02n = new Scanner(System.in);
         while (newEq == 1) {
             System.out.println("Введите уравнение");
-            String equation = sc02.nextLine();
+            equation = sc02.nextLine();
             index = equation.indexOf('x');
+            if (!equation.contains("=") | index == -1){
+                System.out.println("Не похоже на уравнение. Введите 1 для ввода нового уравнения, 0 для завершения работы программы");
+                newEq = sc02n.nextInt();
+                continue;
+            }
             switch (index) {
                 case 0:
                     digit1 = Character.getNumericValue(equation.charAt(2));
@@ -65,7 +72,7 @@ public class EquationSolver {
             }
             System.out.printf("Решение: x = %d%n", x);
             System.out.println("Ввести новое уравнение? Введите 1 для ввода нового уравнения, 0 для завершения работы программы");
-            newEq = sc02.nextInt();
+            newEq = sc02n.nextInt();
         }
         System.out.println("Спасибо за использование нашей программы!");
     }
