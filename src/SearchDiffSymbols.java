@@ -42,11 +42,11 @@ public class LineDiffSymbolsSearch {
                         flags[j] = 1;
                 }
             }
-            sum = 0;
-            // считаем количество различных символов в строке и присваиваем соответствующему элементу массива diffNum
+            diffNum[k] = 0;
+            // считаем количество нулей во flags (соответствует кол-ву различных символов в строке) и присваиваем соответствующему элементу массива diffNum
             for (int flg : flags)
-                sum += flg;
-            diffNum[k] = flags.length - sum;
+                if (flg == 0)
+                    diffNum[k]++;
         }
         // ищем максимальный элемент в массиве diffNum и выводим соответсвующий в массиве strArray
         int max = 0, indexOfMax = 0;
