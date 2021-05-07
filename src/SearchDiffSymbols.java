@@ -10,7 +10,7 @@ import java.util.Scanner;
 Строка 3: 111111111111
 Ответ: привет
 */
-public class LineDiffSymbolsSearch {
+public class SearchDiffSymbols {
     public static void main(String[] args) {
         Scanner sc03n = new Scanner(System.in);
         Scanner sc03s = new Scanner(System.in);
