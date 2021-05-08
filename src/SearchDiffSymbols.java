@@ -32,7 +32,7 @@ public class SearchDiffSymbols {
             int[] flags = new int[strArray[k].length()];
             // проходим по строке
             for (int i = 0; i < strArray[k].length(); i++){
-                ch = strArray[k].charAt(i);
+                ch = strArray[k].toLowerCase().charAt(i);
                 // если символ уже проверялся, пропускаем его
                 if(flags[i] == 1)
                     continue;
