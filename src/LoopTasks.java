@@ -3,6 +3,28 @@ import java.util.Scanner;
 
 public class LoopTasks {
     public static void main(String[] args) {
+        Scanner scMain = new Scanner(System.in);
+        System.out.println("Введите 7, 8, 9, или 10 для перехода к соответствующей задаче");
+        int taskNum = scMain.nextInt();
+        switch (taskNum) {
+            case 7:
+                task7();
+                break;
+            case 8:
+                task8();
+                break;
+            case 9:
+                task9();
+                break;
+            case 10:
+                task10();
+                break;
+            default:
+                System.out.println("Введен некорректный номер задачи");
+        }
+    }
+
+    static void task7() {
         /*
         задача 7
         Напишите программу:
@@ -11,7 +33,7 @@ public class LoopTasks {
         Если массив содержит хотя бы одну из констант, вывести текст "Данное значение имеется в константах".
         */
         System.out.println("задача 7");
-        int x = 10, y = 15, z = 100;
+        final int X = 10, Y = 15, Z = 100;
         System.out.println("Введите размер массива");
         Scanner sc7 = new Scanner(System.in);
         int size = sc7.nextInt();
@@ -23,10 +45,12 @@ public class LoopTasks {
         }
         // сравнение содержимого массива с константами
         for (int n : arrTask7) {
-            if(n == x | n == y | n == z)
+            if(n == X | n == Y | n == Z)
                 System.out.printf("Данное значение (%d) имеется в константах %n", n);
         }
+    }
 
+    static void task8() {
         //задача 8
         //Напишите программу, где пользователь вводит любое целое положительное число n. А программа суммирует все нечетные числа от 1 до введенного пользователем числа n.
         System.out.println("Задача 8");
@@ -38,7 +62,9 @@ public class LoopTasks {
             sum += i;
         }
         System.out.println("Сумма нечетных чисел = " + sum);
+    }
 
+    static void task9() {
         /*
         задача 9
         Напишите программу:
@@ -54,7 +80,7 @@ public class LoopTasks {
         System.out.println("Введите числа для заполнения массива");
         // ввод чисел в массив
         for (int j = 0; j < arrTask9.length; j++){
-            arrTask9[j] = sc7.nextDouble();
+            arrTask9[j] = sc9.nextDouble();
         }
         // подсчет ср. арифм.
         double avg = 0;
@@ -67,7 +93,9 @@ public class LoopTasks {
         for (double w : arrTask9){
             System.out.printf("Произведение элемента массива и среднего арифметического = %f%n", w*avg);
         }
+    }
 
+    static void task10() {
         // задача 10
         // Напишите программу, где пользователь вводит данные с клавиатуры в матрицу, а после этого произведите вывод первой строки матрицы на экран, где каждый элемент умножается на 3.
         // Размерность матрицы задается пользователем.
